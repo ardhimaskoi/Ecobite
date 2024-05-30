@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction</title>
+    <link href="output.css" rel="stylesheet" />
+    <script defer src="script.js"></script>
+  </head>
+  <body class="overflow-y-scroll no-scrollbar">
+    <!--Navbar -->
+    <div class="container max-w-screen-xl mx-auto font-outfit">
+      <section id="navbar" class="h-[10vh] py-2 font-outfit">
+        <div class="container max-w-screen-xl mx-auto">
+          <div class="flex justify-between">
+            <span class="flex items-center"
+              ><img src="../assets/Logo.png" class="mr-2" />
+              <p>EcoBite</p></span
+            >
+            <ul class="flex items-center">
+              <li
+                class="mr-14 text-slate-500 hover:text-slate-900 hover:underline hover:underline-offset-2"
+              >
+                <a href="index.html">Home</a>
+              </li>
+              <li
+                class="mr-14 text-slate-500 hover:text-slate-900 hover:underline hover:underline-offset-2"
+              >
+                <a href="catalog.html">Catalog</a>
+              </li>
+              <li
+                class="mr-14 text-slate-500 hover:text-slate-900 hover:underline hover:underline-offset-2"
+              >
+                <a href="whislist.html">Whislist</a>
+              </li>
+              <li
+                class="text-slate-500 hover:text-slate-900 hover:underline hover:underline-offset-2"
+              >
+                <a href="pembayaran.html">Transaction</a>
+              </li>
+            </ul>
+            <a href="./login.html"
+              ><button class="px-4 py-2 bg-[#A1E870] rounded-md">
+                Sign In
+              </button></a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- End Navbar -->
+    <div class="flex flex-col space-y-4">
+      <!-- Header -->
+      <div class="container max-w-screen-xl mx-auto font-outfit">
+        <div class="flex flex-col py-4 space-y-2">
+          <span class="text-gray-500 text-left">Home / Transaction</span>
+          <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-semibold mb-4">Transaction</h1>
+          </div>
+          <div class="w-full">
+            <div class="flex space-x-2">
+              <button id="refresh" class="p-2 border rounded-lg">
+                <img src="../assets/assets/refresh.svg" alt="refresh" />
+              </button>
+              <input
+                type="text"
+                id="search"
+                placeholder="Cari sesuatu di sini ..."
+                class="p-2 border rounded-lg w-full"
+              />
+              <button class="p-2 border rounded-lg">Relevant</button>
+              <button class="p-2 border rounded-lg">
+                <img src="../assets/assets/search.svg" alt="search" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+
+      <!-- Main Content -->
+      <div class="container max-w-screen-xl mx-auto font-outfit">
+        <div class="flex space-x-4">
+          <!-- Product Summary -->
+          <div class="w-2/3 space-y-4">
+            <div
+              class="flex justify-between items-center p-4 border border-gray-300 rounded-lg"
+            >
+              <h2 class="text-xl font-semibold">Product Summary</h2>
+              <div class="flex space-x-2">
+                <span>Delete All</span>
+                <button id="deleteAll">
+                  <img src="../assets/assets/delete.svg" alt="delete" />
+                </button>
+                <span class="flex justify-center items-center space-x-2">
+                  <span>Choose All</span>
+                  <input
+                    type="checkbox"
+                    id="chooseAll"
+                    class="w-[20px] h-[20px] border border-gray-300 p-1 rounded"
+                  />
+                </span>
+              </div>
+            </div>
+            <!--  -->
+
+            <!-- Product List -->
+            <div id="productList"></div>
+          </div>
+          <!--  -->
+
+          <!-- Rincian Harga -->
+          <div class="w-1/3 self-start p-4 border border-gray-300 rounded-lg">
+            <h2 class="text-xl font-semibold mb-4">Rincian Harga</h2>
+            <div class="flex justify-between mb-2">
+              <span>Price Total</span>
+              <span id="priceTotal">Rp 0</span>
+            </div>
+            <div class="flex justify-between mb-2">
+              <span>Delivery</span>
+              <span>Rp 0</span>
+            </div>
+            <div class="flex justify-between mb-2">
+              <span>Discount (Promo)</span>
+              <span>Rp 0</span>
+            </div>
+            <div class="flex justify-between mb-4">
+              <span class="font-semibold">Total</span>
+              <span id="total">Rp 0</span>
+            </div>
+            <a href="./pembayaran.html"
+              ><button class="w-full bg-green-500 text-white py-2 rounded-md">
+                Pesan Sekarang
+              </button></a
+            >
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+    <div
+      class="font-outfit max-w-screen-xl container mx-auto flex justify-between items-center mt-10"
+    >
+      <p class="font-bold text-2xl text-[#173302]">Similar Selection</p>
+      <span class="flex space-x-3">
+        <img src="../assets/Frame 237995.png" />
+        <img src="../assets/Line 20.png" />
+        <img src="../assets/Frame 237996.png" />
+      </span>
+    </div>
+    <!--  -->
+
+    <!--  -->
+    <!--  -->
+    <section class="hero-7">
+      <div class="container max-w-screen-xl mx-auto font-outfit">
+        <div class="grid grid-cols-4 gap-6">
+          <div
+            class="border border-slate-400 flex flex-col p-4 rounded-lg mt-10"
+          >
+            <span class="relative">
+              <button
+                class="bg-[#FC5A32] px-2 py-1 absolute top-3 left-2 rounded-lg text-white"
+              >
+                5% Discount
+              </button>
+              <img src="../assets/Rectangle 6802.png" class="w-full" />
+            </span>
+            <span class="flex justify-between items-center mt-4">
+              <p class="font-semibold text-xl">Fresh Broccoli</p>
+              <img src="../assets/solar_bookmark-linear.svg" class="w-5 h-6" />
+            </span>
+            <span class="flex items-center mt-2">
+              <img src="../assets/storefront.svg" class="w-4 h-4 mr-2" />
+              <p class="text-sm">Hotel California</p>
+              <img
+                src="../assets/iconamoon_shield-yes-fill.svg"
+                class="w-4 h-4 ml-2"
+              />
+            </span>
+            <img src="../assets/Reviews + Status.svg" class="w-1/2 mt-2 mb-4" />
+            <span class="flex items-center mb-2">
+              <span class="flex items-baseline">
+                <p class="text-xs mr-2">Rp</p>
+                <p class="text-xl font-bold mr-3">7.000</p></span
+              >
+
+              <span class="relative">
+                <p class="text-md text-red-500">Rp 15.000</p>
+                <div class="absolute top-1/2 border border-black w-full"></div>
+              </span>
+            </span>
+            <a href="transaction.html">
+              <button class="bg-[#A1E870] rounded-lg py-2 mt-2 w-full">
+                Add To Cart
+              </button>
+            </a>
+          </div>
+          <div
+            class="border border-slate-400 flex flex-col p-4 rounded-lg mt-10"
+          >
+            <span class="relative">
+              <button
+                class="bg-[#FC5A32] px-2 py-1 absolute top-3 left-2 rounded-lg text-white"
+              >
+                5% Discount
+              </button>
+              <img
+                src="../assets/img/Rectangle 6802.png"
+                class="w-full h-fit"
+              />
+            </span>
+            <span class="flex justify-between items-center mt-4">
+              <p class="font-semibold text-xl">Fresh Broccoli</p>
+              <img src="../assets/solar_bookmark-linear.svg" class="w-5 h-6" />
+            </span>
+            <span class="flex items-center mt-2">
+              <img src="../assets/storefront.svg" class="w-4 h-4 mr-2" />
+              <p class="text-sm">Hotel California</p>
+              <img
+                src="../assets/iconamoon_shield-yes-fill.svg"
+                class="w-4 h-4 ml-2"
+              />
+            </span>
+            <img src="../assets/Reviews + Status.svg" class="w-1/2 mt-2 mb-4" />
+            <span class="flex items-center mb-2">
+              <span class="flex items-baseline">
+                <p class="text-xs mr-2">Rp</p>
+                <p class="text-xl font-bold mr-3">7.000</p></span
+              >
+
+              <span class="relative">
+                <p class="text-md text-red-500">Rp 15.000</p>
+                <div class="absolute top-1/2 border border-black w-full"></div>
+              </span>
+            </span>
+            <a href="transaction.html">
+              <button class="bg-[#A1E870] rounded-lg py-2 mt-2 w-full">
+                Add To Cart
+              </button>
+            </a>
+          </div>
+          <div
+            class="border border-slate-400 flex flex-col p-4 rounded-lg mt-10"
+          >
+            <span class="relative">
+              <button
+                class="bg-[#FC5A32] px-2 py-1 absolute top-3 left-2 rounded-lg text-white"
+              >
+                5% Discount
+              </button>
+              <img src="../assets/img/Rectangle 6802 (1).png" class="w-full" />
+            </span>
+            <span class="flex justify-between items-center mt-4">
+              <p class="font-semibold text-xl">Fresh Broccoli</p>
+              <img src="../assets/solar_bookmark-linear.svg" class="w-5 h-6" />
+            </span>
+            <span class="flex items-center mt-2">
+              <img src="../assets/storefront.svg" class="w-4 h-4 mr-2" />
+              <p class="text-sm">Hotel California</p>
+              <img
+                src="../assets/iconamoon_shield-yes-fill.svg"
+                class="w-4 h-4 ml-2"
+              />
+            </span>
+            <img src="../assets/Reviews + Status.svg" class="w-1/2 mt-2 mb-4" />
+            <span class="flex items-center mb-2">
+              <span class="flex items-baseline">
+                <p class="text-xs mr-2">Rp</p>
+                <p class="text-xl font-bold mr-3">7.000</p></span
+              >
+
+              <span class="relative">
+                <p class="text-md text-red-500">Rp 15.000</p>
+                <div class="absolute top-1/2 border border-black w-full"></div>
+              </span>
+            </span>
+            <a href="transaction.html">
+              <button class="bg-[#A1E870] rounded-lg py-2 mt-2 w-full">
+                Add To Cart
+              </button>
+            </a>
+          </div>
+          <div
+            class="border border-slate-400 flex flex-col p-4 rounded-lg mt-10"
+          >
+            <span class="relative">
+              <button
+                class="bg-[#FC5A32] px-2 py-1 absolute top-3 left-2 rounded-lg text-white"
+              >
+                5% Discount
+              </button>
+              <img src="../assets/img/Rectangle 6802 (2).png" class="w-full" />
+            </span>
+            <span class="flex justify-between items-center mt-4">
+              <p class="font-semibold text-xl">Fresh Broccoli</p>
+              <img src="../assets/solar_bookmark-linear.svg" class="w-5 h-6" />
+            </span>
+            <span class="flex items-center mt-2">
+              <img src="../assets/storefront.svg" class="w-4 h-4 mr-2" />
+              <p class="text-sm">Hotel California</p>
+              <img
+                src="../assets/iconamoon_shield-yes-fill.svg"
+                class="w-4 h-4 ml-2"
+              />
+            </span>
+            <img src="../assets/Reviews + Status.svg" class="w-1/2 mt-2 mb-4" />
+            <span class="flex items-center mb-2">
+              <span class="flex items-baseline">
+                <p class="text-xs mr-2">Rp</p>
+                <p class="text-xl font-bold mr-3">7.000</p></span
+              >
+
+              <span class="relative">
+                <p class="text-md text-red-500">Rp 15.000</p>
+                <div class="absolute top-1/2 border border-black w-full"></div>
+              </span>
+            </span>
+            <a href="transaction.html">
+              <button class="bg-[#A1E870] rounded-lg py-2 mt-2 w-full">
+                Add To Cart
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  -->
+    <!--  -->
+
+    <!--  -->
+    <footer>
+      <div class="w-full bg-[#173302] text-white py-5 font-outfit mt-20">
+        <div class="flex items-center justify-between max-w-screen-xl mx-auto">
+          <span class="flex items-center">
+            <img src="../assets/Logo.svg" class="mr-2" />
+            <p>EcoBite</p>
+          </span>
+          <span class="flex">
+            <p class="mr-6">About Us</p>
+            <p class="mr-6">Catalog</p>
+            <p class="mr-6">Catalog Detail</p>
+            <p>Customer Support</p>
+          </span>
+        </div>
+        <div
+          class="container mx-auto flex items-center justify-between max-w-screen-xl mt-10"
+        >
+          <p>© Ecobite 2024 - All Rights Reserved</p>
+          <span class="flex">
+            <p class="mr-10 text-xs">Terms of Use</p>
+            <p class="mr-10 text-xs">Privacy Policy</p>
+            <p class="text-xs">Agreement</p>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
