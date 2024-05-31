@@ -7,7 +7,7 @@ const products = [
     price: 220000,
     stock: 54,
     total: 1,
-    image: "../assets/assets/img_product1.png",
+    image: "assets/assets/img_product1.png",
     bookmarked: false,
     selected: false,
   },
@@ -18,7 +18,7 @@ const products = [
     price: 220000,
     stock: 23,
     total: 1,
-    image: "../assets/assets/img_product2.png",
+    image: "assets/assets/img_product2.png",
     bookmarked: false,
     selected: false,
   },
@@ -29,7 +29,7 @@ const products = [
     price: 220000,
     stock: 51,
     total: 1,
-    image: "../assets/assets/img_product3.png",
+    image: "assets/assets/img_product3.png",
     bookmarked: false,
     selected: false,
   },
@@ -40,7 +40,7 @@ const products = [
     price: 220000,
     stock: 44,
     total: 1,
-    image: "../assets/assets/img_product4.png",
+    image: "assets/assets/img_product4.png",
     bookmarked: false,
     selected: false,
   },
@@ -112,12 +112,12 @@ const renderProductList = () => {
           <p class="font-bold">Rp ${product.price.toLocaleString()}</p>
           <div class="flex space-x-2 mt-2">
           <button onclick="toggleBookmark(${product.id})">
-            <img src="../assets/assets/bookmark.svg" class="${
+            <img src="assets/assets/bookmark.svg" class="${
               product.bookmarked ? "text-red-500" : ""
             }">
           </button>
             <button onclick="deleteProduct(${product.id})">
-              <img src="../assets/assets/delete.svg">
+              <img src="assets/assets/delete.svg">
             </button>
            
           </div>
